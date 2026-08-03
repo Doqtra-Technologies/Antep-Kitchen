@@ -126,6 +126,9 @@ export default function Footer() {
             </div>
           </div>
         </section>
+        <p className="mt-12 border-t border-white/15 pt-6 text-center text-xs text-[#75859b]">
+          © 2026 Antep Kitchen. All rights reserved.
+        </p>
       </div>
     </footer>
   );

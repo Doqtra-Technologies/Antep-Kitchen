@@ -29,9 +29,15 @@ const shots = [
   { icon: UtensilsCrossed, span: "", h: "h-64", v: 2, src: gallery12.src },
 ];
 
-export default function GallerySection() {
+export default function GallerySection({ showHeading = false }: { showHeading?: boolean }) {
   return (
     <section id="gallery" className="bg-[#0c0b09] py-24 px-6 lg:px-10">
+      {showHeading && (
+        <Reveal className="mx-auto mb-14 max-w-[1400px] text-center">
+          <p className="eyebrow mb-3 text-gold">Visual Journey</p>
+          <h2 className="font-display text-4xl text-cream sm:text-5xl">Gallery</h2>
+        </Reveal>
+      )}
       <div className="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
         {shots.map((s, i) => (
           <Reveal key={i} delay={(i % 4) * 90} className={`${s.span} overflow-hidden rounded-[14px]`}>

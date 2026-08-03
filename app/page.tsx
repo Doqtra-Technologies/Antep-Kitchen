@@ -11,7 +11,7 @@ export default function Home() {
       <Hero />
       <SplitFeature />
       <EventsSection />
-      <GallerySection />
+      <GallerySection showHeading />
       <TestimonialsSection />
       <ContactSection />
     </>

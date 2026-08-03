@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollRestoration from "@/components/ScrollRestoration";
 
 export const metadata: Metadata = {
   title: "Antep Kitchen — Restaurant, Brasserie & Lounge Bar",
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col">
+        <ScrollRestoration />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

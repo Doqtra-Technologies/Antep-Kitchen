@@ -1,7 +1,9 @@
 "use client";
 
 import { BadgeCheck, ChevronLeft, ChevronRight, Star } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
+import googleLogo from "../assets/google.svg";
 
 const reviews = [
   { name: "Rain Yan", time: "Google review", text: "Authentic cuisine and efficient catering. Although it was bustling when we went, we didn’t have to wait long before we were served and for the food to arrive. The meats were tender and grilled to a satisfactory level of crispiness. Portions were also generous, including the salads. The flatbread served before our meals were freshly baked with a proportionate airiness and fluffiness. My friends had Turkish tea which they also enjoyed. We also noted they celebrate people’s birthdays in a unique manner with energetic music and a dessert. Overall an enjoyable dining experience, would recommend." },
@@ -18,7 +20,7 @@ export default function TestimonialsSection() {
     <section className="overflow-hidden bg-black py-24">
       <div className="mx-auto mb-14 max-w-[1400px] px-6 text-center">
         <p className="mb-2 text-lg text-cream">We are happy to have the best services for our customers</p>
-        <h2 className="font-display text-4xl text-cream sm:text-5xl">Google Trust Index</h2>
+        <h2 className="font-display text-4xl text-cream sm:text-5xl">Our Customer Reviews</h2>
       </div>
 
       <div className="relative mx-auto max-w-[1440px]">
@@ -30,15 +32,15 @@ export default function TestimonialsSection() {
         <button type="button" onClick={() => go(-1)} disabled={active === 1} aria-label="Previous reviews" className="absolute left-2 top-1/2 z-10 grid size-14 -translate-y-1/2 place-items-center rounded-full bg-[#242424] text-white transition hover:bg-[#3a3a3a] disabled:opacity-30 sm:left-5"><ChevronLeft size={34} /></button>
         <button type="button" onClick={() => go(1)} disabled={active === 7} aria-label="Next reviews" className="absolute right-2 top-1/2 z-10 grid size-14 -translate-y-1/2 place-items-center rounded-full bg-[#242424] text-white transition hover:bg-[#3a3a3a] disabled:opacity-30 sm:right-5"><ChevronRight size={34} /></button>
       </div>
-      <p className="mt-12 text-center text-sm text-[#9cabc0]">For more reviews, please visit our official <span className="font-semibold text-[#4285f4]">Google Business Page</span></p>
+      <p className="mt-12 text-center text-sm text-[#9cabc0]">For more reviews, please visit our official <a href="https://share.google/prCUMwE9Pru44RZUy" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#4285f4] hover:underline">Google Business Page</a></p>
     </section>
   );
 }
 
 function ReviewCard({ review }: { review: (typeof reviews)[number] }) {
-  return <article className="w-[384px] shrink-0 rounded-[20px] border border-white/10 bg-[#232323] p-8 text-left">
-    <div className="mb-5 flex items-center justify-between"><div className="flex items-center gap-3"><div className="flex size-11 items-center justify-center rounded-full bg-[#4285f4] text-lg font-semibold text-white">{review.name[0]}</div><div><p className="text-sm font-bold text-cream">{review.name}</p><p className="text-xs text-muted">{review.time}</p></div></div><span className="font-bold text-[#4285f4]">G</span></div>
+  return <article className="w-[330px] shrink-0 rounded-[18px] border border-white/10 bg-[#232323] p-6 text-left">
+    <div className="mb-5 flex items-center justify-between"><div className="flex items-center gap-3"><div className="flex size-11 items-center justify-center rounded-full bg-[#4285f4] text-lg font-semibold text-white">{review.name[0]}</div><div><p className="text-sm font-bold text-cream">{review.name}</p><p className="text-xs text-muted">{review.time}</p></div></div><Image src={googleLogo} alt="Google" width={22} height={22} /></div>
     <div className="mb-4 flex gap-1 text-[#fbbc04]">{Array.from({ length: 5 }).map((_, index) => <Star key={index} size={16} fill="currentColor" strokeWidth={0} />)}<BadgeCheck size={16} className="ml-2 text-[#4285f4]" aria-label="Google verified user" /></div>
-    <p className="text-[15px] leading-7 text-[#f2eee7]">{review.text}</p>
+    <p className="text-sm font-light leading-6 text-[#f2eee7]">{review.text}</p>
   </article>;
 }
