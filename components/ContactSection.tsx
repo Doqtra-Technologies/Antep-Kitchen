@@ -19,7 +19,7 @@ export default function ContactSection() {
           <div className="mt-6 grid max-w-md grid-cols-2 gap-x-8 gap-y-4">{hours.map(([day, time]) => <div key={day}><p className="text-sm font-semibold text-cream">{day}</p><p className="text-sm text-muted">{time}</p></div>)}</div>
         </Reveal>
 
-        <Reveal>
+        <Reveal delay={140}>
           <h2 className="mb-10 font-display text-4xl text-cream">Get In Touch</h2>
           <form className="space-y-5">
             <div className="grid gap-5 sm:grid-cols-2"><Field label="Name *" /><Field label="Last Name *" /></div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   Mail,
   MapPin,
@@ -54,8 +55,8 @@ export default function Footer() {
       <div className="mx-auto max-w-[1440px]">
         <section className="grid items-center gap-10 border-b border-white/15 pb-14 lg:grid-cols-[minmax(160px,0.7fr)_minmax(340px,1.2fr)_minmax(430px,1fr)] lg:gap-14">
           <Link href="/" aria-label="Antep Kitchen home" className="group w-fit justify-self-center lg:justify-self-start">
-            <img
-              src={antepLogo.src}
+            <Image
+              src={antepLogo}
               alt="Antep Kitchen"
               className="h-20 w-auto rounded-[10px] transition-transform group-hover:scale-105"
             />

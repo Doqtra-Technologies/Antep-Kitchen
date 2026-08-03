@@ -30,29 +30,31 @@ export default function SplitFeature() {
   return (
     <section className="bg-[#c6a15b] py-20 px-6 lg:px-10">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-        {items.map((item) => (
-          <Reveal key={item.title} className="relative bg-black rounded-[20px] overflow-hidden flex flex-col shadow-2xl transition-transform duration-300 hover:scale-[1.02]">
-            <PhotoPlaceholder
-              icon={item.icon}
-              variant={item.variant}
-              src={item.image}
-              alt={item.title}
-              className="h-[440px]"
-            />
-            <Link
-              href={item.href}
-              className="absolute inset-0 flex flex-col items-center justify-center bg-black/45 p-10 text-center"
-            >
-              <h3 className="font-display text-4xl tracking-[0.12em] text-cream mb-4 uppercase">
-                {item.title}
-              </h3>
-              <p className="text-muted text-sm max-w-sm mb-6 leading-relaxed">
-                {item.copy}
-              </p>
-              <span className="eyebrow text-gold hover:text-gold-light transition-colors">
-                {item.cta} &rarr;
-              </span>
-            </Link>
+        {items.map((item, index) => (
+          <Reveal key={item.title} delay={index * 140}>
+            <div className="relative flex flex-col overflow-hidden rounded-[20px] bg-black shadow-2xl transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_24px_44px_rgba(0,0,0,0.38)]">
+              <PhotoPlaceholder
+                icon={item.icon}
+                variant={item.variant}
+                src={item.image}
+                alt={item.title}
+                className="h-[440px]"
+              />
+              <Link
+                href={item.href}
+                className="absolute inset-0 flex flex-col items-center justify-center bg-black/45 p-10 text-center"
+              >
+                <h3 className="font-display text-4xl tracking-[0.12em] text-cream mb-4 uppercase">
+                  {item.title}
+                </h3>
+                <p className="text-muted text-sm max-w-sm mb-6 leading-relaxed">
+                  {item.copy}
+                </p>
+                <span className="eyebrow text-gold hover:text-gold-light transition-colors">
+                  {item.cta} &rarr;
+                </span>
+              </Link>
+            </div>
           </Reveal>
         ))}
       </div>

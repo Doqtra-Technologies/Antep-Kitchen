@@ -9,7 +9,7 @@ export default function PageHeader({
 }) {
   return (
     <section className="bg-[#0c0b09] pt-40 pb-16 px-6 lg:px-10">
-      <div className="max-w-[1400px] mx-auto text-center">
+      <Reveal className="max-w-[1400px] mx-auto text-center">
         <p className="eyebrow text-gold mb-4">{eyebrow}</p>
         <h1 className="font-display text-4xl sm:text-5xl md:text-6xl text-cream">
           {title}
@@ -19,7 +19,8 @@ export default function PageHeader({
             {subtitle}
           </p>
         )}
-      </div>
+      </Reveal>
     </section>
   );
 }
+import Reveal from "./Reveal";

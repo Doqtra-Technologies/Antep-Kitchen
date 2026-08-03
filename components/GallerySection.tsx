@@ -34,7 +34,7 @@ export default function GallerySection() {
     <section id="gallery" className="bg-[#0c0b09] py-24 px-6 lg:px-10">
       <div className="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
         {shots.map((s, i) => (
-          <Reveal key={i} className={`${s.span} overflow-hidden rounded-[14px]`}>
+          <Reveal key={i} delay={(i % 4) * 90} className={`${s.span} overflow-hidden rounded-[14px]`}>
             <a href={s.src} target="_blank" rel="noopener noreferrer" aria-label="View gallery image">
               <PhotoPlaceholder icon={s.icon} src={s.src} alt="Antep Kitchen gallery" variant={s.v} className={s.h} />
             </a>

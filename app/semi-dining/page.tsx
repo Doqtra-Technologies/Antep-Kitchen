@@ -1,6 +1,6 @@
 import { Users } from "lucide-react";
+import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
-import ContactSection from "@/components/ContactSection";
 import img1 from "../../assets/semi_private/img1.webp";
 import img2 from "../../assets/semi_private/img2.webp";
 import img3 from "../../assets/semi_private/img3.webp";
@@ -40,19 +40,22 @@ export default function SemiDiningPage() {
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <img
-                src={img1.src}
+              <Image
+                src={img1}
                 alt="Antep dining room view 1"
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 className="w-full h-[280px] object-cover rounded-[12px] col-span-2"
               />
-              <img
-                src={img2.src}
+              <Image
+                src={img2}
                 alt="Antep dining room view 2"
+                sizes="(min-width: 1024px) 25vw, 50vw"
                 className="w-full h-[200px] object-cover rounded-[12px]"
               />
-              <img
-                src={img3.src}
+              <Image
+                src={img3}
                 alt="Antep dining room view 3"
+                sizes="(min-width: 1024px) 25vw, 50vw"
                 className="w-full h-[200px] object-cover rounded-[12px]"
               />
             </div>
@@ -146,8 +149,6 @@ export default function SemiDiningPage() {
           </form>
         </div>
       </section>
-
-      <ContactSection />
     </>
   );
 }
