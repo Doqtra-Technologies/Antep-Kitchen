@@ -15,7 +15,6 @@ export default function Hero() {
           <h1 className="font-display text-4xl sm:text-5xl md:text-7xl text-cream leading-tight">
             Where Turkish tradition meets modern dining.
           </h1>
-          <div className="gold-rule-center my-8" />
           <p className="text-muted max-w-xl mx-auto text-sm sm:text-base">
             Authentic flavours, handcrafted dishes and an atmosphere
             designed to bring people together.

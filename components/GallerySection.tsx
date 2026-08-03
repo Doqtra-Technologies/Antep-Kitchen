@@ -32,17 +32,6 @@ const shots = [
 export default function GallerySection() {
   return (
     <section id="gallery" className="bg-[#0c0b09] py-24 px-6 lg:px-10">
-      <div className="max-w-[1400px] mx-auto text-center mb-14">
-        <p className="eyebrow text-gold mb-3">Visual Journey</p>
-        <h2 className="font-display text-4xl sm:text-5xl text-cream mb-4">
-          Our Gallery
-        </h2>
-        <p className="text-muted max-w-xl mx-auto text-sm">
-          A look at the rooms, the pours, and the plates that make up an
-          evening here.
-        </p>
-        <div className="gold-rule-center mt-6" />
-      </div>
       <div className="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
         {shots.map((s, i) => (
           <Reveal key={i} className={`${s.span} overflow-hidden rounded-[14px]`}>

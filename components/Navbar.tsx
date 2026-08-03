@@ -55,7 +55,7 @@ export default function Navbar() {
             href="https://www.opentable.com/r/antep-kitchen-oxfordshire"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-md bg-gold text-[#0c0b09] eyebrow px-6 py-3 hover:bg-gold-light transition-colors"
+            className="rounded-md border border-gold bg-black text-gold eyebrow px-6 py-3 hover:bg-gold hover:text-[#0c0b09] transition-colors"
           >
             Reservation
           </a>
