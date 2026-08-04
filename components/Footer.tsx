@@ -1,11 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import {
   Mail,
   MapPin,
   Phone,
 } from "lucide-react";
-import antepLogo from "../assets/anteplogo.jpeg";
+import antepLogo from "../assets/anteplogo.png";
 import FacebookIcon from "./FacebookIcon";
 import InstagramIcon from "./InstagramIcon";
 import TikTokIcon from "./TikTokIcon";
@@ -50,10 +53,13 @@ function ContactDetail({
 }
 
 export default function Footer() {
+  const pathname = usePathname();
+  const showContact = pathname !== "/";
+  
   return (
     <footer className="bg-black px-6 py-12 text-white sm:px-10 lg:px-16 lg:py-10">
       <div className="mx-auto max-w-[1440px]">
-        <section className="grid items-center gap-10 border-b border-white/15 pb-14 lg:grid-cols-[minmax(160px,0.7fr)_minmax(340px,1.2fr)_minmax(430px,1fr)] lg:gap-14">
+        <section className={`flex flex-col items-center gap-10 border-b border-white/15 pb-14 lg:flex-row lg:justify-center lg:gap-14 ${showContact ? 'lg:grid-cols-[minmax(160px,0.7fr)_minmax(340px,1.2fr)_minmax(430px,1fr)]' : ''}`}>
           <Link href="/" aria-label="Antep Kitchen home" className="group w-fit justify-self-center lg:justify-self-start">
             <Image
               src={antepLogo}
@@ -62,18 +68,20 @@ export default function Footer() {
             />
           </Link>
 
-          <div className="mx-auto grid w-fit gap-5 sm:grid-cols-3 lg:mx-0 lg:grid-cols-1">
-            <ContactDetail icon={Phone} label="Call us">01865 247 555</ContactDetail>
-            <ContactDetail icon={Mail} label="Email">oxford@antepkitchen.co.uk</ContactDetail>
-            <ContactDetail icon={MapPin} label="Address">228–230 Cowley Road, Oxford, OX4 1UH</ContactDetail>
-          </div>
+          {showContact && (
+            <div className="mx-auto grid w-fit gap-5 sm:grid-cols-3 lg:mx-0 lg:grid-cols-1">
+              <ContactDetail icon={Phone} label="Call us">01865 247 555</ContactDetail>
+              <ContactDetail icon={Mail} label="Email">oxford@antepkitchen.co.uk</ContactDetail>
+              <ContactDetail icon={MapPin} label="Address">228–230 Cowley Road, Oxford, OX4 1UH</ContactDetail>
+            </div>
+          )}
 
           <a
             href={MAPS_LINK}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Open Antep Kitchen location in Google Maps"
-            className="group relative block h-[250px] overflow-hidden rounded-[10px] bg-[#e7e2d8] outline-offset-4 transition hover:outline hover:outline-1 hover:outline-[#d8b65f] sm:h-[280px]"
+            className="group relative block h-[250px] w-full max-w-md overflow-hidden rounded-[10px] bg-[#e7e2d8] outline-offset-4 transition hover:outline hover:outline-1 hover:outline-[#d8b65f] sm:h-[280px]"
           >
             <iframe
               title="Antep Kitchen location map"

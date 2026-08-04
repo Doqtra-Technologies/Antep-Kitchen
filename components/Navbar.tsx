@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import antepLogo from "../assets/anteplogo.jpeg";
+import antepLogo from "../assets/anteplogo.png";
 import FacebookIcon from "./FacebookIcon";
 import InstagramIcon from "./InstagramIcon";
 import TikTokIcon from "./TikTokIcon";

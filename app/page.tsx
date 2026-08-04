@@ -5,6 +5,10 @@ import GallerySection from "@/components/GallerySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 
+
+
+
+
 export default function Home() {
   return (
     <>

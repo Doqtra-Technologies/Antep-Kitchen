@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Where Turkish tradition meets modern dining",
     description: "Authentic flavours, handcrafted dishes and an atmosphere designed to bring people together.",
-    images: ["/anteplogo.jpeg"],
+    images: ["/anteplogo.png"],
     type: "website",
   },
   twitter: {

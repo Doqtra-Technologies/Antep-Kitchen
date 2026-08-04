@@ -10,9 +10,6 @@ import gallery6 from "../assets/gallery/DSC02054.webp";
 import gallery7 from "../assets/gallery/DSC05162.webp";
 import gallery8 from "../assets/gallery/f-DSC05180.webp";
 import gallery9 from "../assets/gallery/f-DSC05206.webp";
-import gallery10 from "../assets/gallery/f-DSC05259.webp";
-import gallery11 from "../assets/gallery/IMG_2206.webp";
-import gallery12 from "../assets/gallery/IMG_2550.webp";
 
 const shots = [
   { icon: Martini, span: "md:col-span-2 md:row-span-2", h: "h-64 md:h-full", v: 0, src: gallery1.src },
@@ -24,9 +21,6 @@ const shots = [
   { icon: Martini, span: "", h: "h-64", v: 0, src: gallery7.src },
   { icon: GlassWater, span: "", h: "h-64", v: 1, src: gallery8.src },
   { icon: Soup, span: "", h: "h-64", v: 2, src: gallery9.src },
-  { icon: Users, span: "", h: "h-64", v: 0, src: gallery10.src },
-  { icon: Flame, span: "", h: "h-64", v: 1, src: gallery11.src },
-  { icon: UtensilsCrossed, span: "", h: "h-64", v: 2, src: gallery12.src },
 ];
 
 export default function GallerySection({ showHeading = false }: { showHeading?: boolean }) {

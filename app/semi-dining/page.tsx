@@ -1,11 +1,34 @@
-import { Users } from "lucide-react";
+"use client";
+
+import { Users, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import PageHeader from "@/components/PageHeader";
 import img1 from "../../assets/semi_private/img1.webp";
 import img2 from "../../assets/semi_private/img2.webp";
 import img3 from "../../assets/semi_private/img3.webp";
 
+const images = [
+  { src: img1, alt: "Antep dining room view 1" },
+  { src: img2, alt: "Antep dining room view 2" },
+  { src: img3, alt: "Antep dining room view 3" },
+];
+
 export default function SemiDiningPage() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const goTo = (index: number) => setCurrent(index);
+  const goNext = () => setCurrent((prev) => (prev + 1) % images.length);
+  const goPrev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
+
   return (
     <>
       <PageHeader
@@ -39,25 +62,55 @@ export default function SemiDiningPage() {
                 occasions.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <Image
-                src={img1}
-                alt="Antep dining room view 1"
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="w-full h-[280px] object-cover rounded-[12px] col-span-2"
-              />
-              <Image
-                src={img2}
-                alt="Antep dining room view 2"
-                sizes="(min-width: 1024px) 25vw, 50vw"
-                className="w-full h-[200px] object-cover rounded-[12px]"
-              />
-              <Image
-                src={img3}
-                alt="Antep dining room view 3"
-                sizes="(min-width: 1024px) 25vw, 50vw"
-                className="w-full h-[200px] object-cover rounded-[12px]"
-              />
+            <div className="relative">
+              <div className="overflow-hidden rounded-[12px]">
+                <div 
+                  className="flex transition-transform duration-700 ease-in-out"
+                  style={{ transform: `translateX(-${current * 100}%)` }}
+                >
+                  {images.map((image, index) => (
+                    <div key={index} className="w-full shrink-0">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        sizes="(min-width: 1024px) 50vw, 100vw"
+                        className="w-full h-[400px] sm:h-[500px] object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <button
+                type="button"
+                onClick={goPrev}
+                aria-label="Previous image"
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 grid size-12 place-items-center rounded-full bg-black/50 text-white transition hover:bg-black/70"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              
+              <button
+                type="button"
+                onClick={goNext}
+                aria-label="Next image"
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 grid size-12 place-items-center rounded-full bg-black/50 text-white transition hover:bg-black/70"
+              >
+                <ChevronRight size={24} />
+              </button>
+
+              <div className="flex justify-center gap-2 mt-6">
+                {images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goTo(index)}
+                    className={`h-2 rounded-full transition-all ${
+                      index === current ? 'w-8 bg-[#d8b65f]' : 'w-2 bg-white/20'
+                    }`}
+                    aria-label={`Go to image ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
