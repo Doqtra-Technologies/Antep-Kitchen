@@ -5,9 +5,22 @@ import Footer from "@/components/Footer";
 import ScrollRestoration from "@/components/ScrollRestoration";
 
 export const metadata: Metadata = {
-  title: "Antep Kitchen — Restaurant, Brasserie & Lounge Bar",
-  description:
-    "Authentic Turkish cuisine in Oxford. Charcoal-grilled meats, handcrafted meze and genuine hospitality.",
+  title: "Where Turkish tradition meets modern dining",
+  description: "Authentic flavours, handcrafted dishes and an atmosphere designed to bring people together.",
+  icons: {
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "Where Turkish tradition meets modern dining",
+    description: "Authentic flavours, handcrafted dishes and an atmosphere designed to bring people together.",
+    images: ["/anteplogo.jpeg"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Where Turkish tradition meets modern dining",
+    description: "Authentic flavours, handcrafted dishes and an atmosphere designed to bring people together.",
+  },
 };
 
 export default function RootLayout({
