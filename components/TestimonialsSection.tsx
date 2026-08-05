@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 const reviews = [
   { name: "Rain Yan", text: "Authentic cuisine with generous portions. The meats were tender and grilled perfectly. Great dining experience!" },
-  { name: "George the Explorer", text: "Good food and service. The restaurant was quite loud, but overall a nice place to visit." },
+  { name: "George the Explorer", text: "Good food and service. The ambiance was energetic, overall a nice place to visit." },
   { name: "Rabia Ahmed", text: "Amazing experience! Fresh, delicious food and excellent service from Hassan. Will definitely be back!" },
 ];
 
