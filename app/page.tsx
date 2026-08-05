@@ -3,11 +3,6 @@ import SplitFeature from "@/components/SplitFeature";
 import EventsSection from "@/components/EventsSection";
 import GallerySection from "@/components/GallerySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import ContactSection from "@/components/ContactSection";
-
-
-
-
 
 export default function Home() {
   return (
@@ -17,7 +12,6 @@ export default function Home() {
       <EventsSection />
       <GallerySection showHeading />
       <TestimonialsSection />
-      <ContactSection />
     </>
   );
 }

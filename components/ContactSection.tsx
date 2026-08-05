@@ -16,7 +16,7 @@ export default function ContactSection() {
             <a href={MAPS_LINK} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 transition hover:opacity-80"><span className="grid size-11 place-items-center rounded-full bg-white text-black"><MapPin size={16} /></span><span><b className="eyebrow block text-gold">Address</b><span className="mt-1 block text-cream">228–230 Cowley Road, Oxford, OX4 1UH</span></span></a>
           </div>
           <div className="flex items-center gap-5"><h3 className="eyebrow text-cream">Opening Hours</h3><span className="h-px flex-1 bg-white/20" /></div>
-          <div className="mt-6 grid max-w-md grid-cols-2 gap-x-8 gap-y-4">{hours.map(([day, time]) => <div key={day}><p className="text-sm font-semibold text-cream">{day}</p><p className="text-sm text-muted">{time}</p></div>)}</div>
+          <div className="mt-6 grid max-w-md grid-cols-2 gap-x-8 gap-y-4">{hours.map(([day, time]) => <div key={day}><p className="text-lg font-semibold text-cream">{day}</p><p className="text-lg text-[#d8c491]">{time}</p></div>)}</div>
         </Reveal>
 
         <Reveal delay={140}>

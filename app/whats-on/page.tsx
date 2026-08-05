@@ -10,7 +10,7 @@ export default function WhatsOnPage() {
         title="What's On"
         subtitle="Brunches, DJ nights, happy hour and more — something on most nights of the week."
       />
-      <EventsSection />
+      <EventsSection showOrderButton={false} />
       <SplitFeature />
     </>
   );

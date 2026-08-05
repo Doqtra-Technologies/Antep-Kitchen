@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import {
   Mail,
   MapPin,
@@ -53,8 +52,7 @@ function ContactDetail({
 }
 
 export default function Footer() {
-  const pathname = usePathname();
-  const showContact = pathname !== "/";
+  const showContact = true;
   
   return (
     <footer className="bg-black px-6 py-12 text-white sm:px-10 lg:px-16 lg:py-10">
@@ -102,7 +100,7 @@ export default function Footer() {
               <h2 className="font-display text-[22px] text-[#c4d0e5]">Opening Hours</h2>
               <span className="h-px flex-1 bg-white/15" />
             </div>
-            <ul className="mt-7 space-y-3 text-sm leading-none text-[#75859b]">
+            <ul className="mt-7 space-y-3 text-lg font-medium text-[#d8c491] leading-none">
               {openingHours.map((hours) => <li key={hours}>{hours}</li>)}
             </ul>
           </div>
