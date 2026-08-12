@@ -2,10 +2,15 @@
   "name": "ivy-lounge",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "start:standalone": "node .next/standalone/server.js",
+    "bundle": "node scripts/bundle-godaddy.mjs",
     "lint": "eslint"
   },
   "dependencies": {

@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Generated GoDaddy upload bundle — traced vendor code, not ours to lint.
+    "deploy/**",
   ]),
 ]);
 
