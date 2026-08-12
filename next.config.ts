@@ -1,9 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Static HTML export -> `out/` folder, uploaded to GoDaddy public_html.
-  // No Node runtime, no Passenger startup file required.
-  output: "export",
   // Emits `about/index.html` instead of `about.html` so Apache resolves
   // /about without rewrite rules.
   trailingSlash: true,
