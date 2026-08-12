@@ -10,7 +10,7 @@ const events = [
   { title: "Private Dining", image: eventHappyHour },
 ];
 
-export default function EventsSection({ showOrderButton = true }: { showOrderButton?: boolean }) {
+export default function EventsSection() {
   return (
     <section id="events" className="bg-[#c6a15b] px-6 py-8 lg:px-10">
       <div className="mx-auto max-w-[1400px]">
@@ -37,19 +37,6 @@ export default function EventsSection({ showOrderButton = true }: { showOrderBut
             </Reveal>
           ))}
         </div>
-        
-        {showOrderButton && (
-          <div className="mt-12 text-center">
-            <a
-              href="https://www.opentable.com/r/antep-kitchen-oxfordshire"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block rounded-[8px] bg-[#0c0b09] px-10 py-4 text-xs font-bold tracking-[0.2em] text-white uppercase transition hover:bg-[#1a1a1a]"
-            >
-              Order Online
-            </a>
-          </div>
-        )}
       </div>
     </section>
   );
