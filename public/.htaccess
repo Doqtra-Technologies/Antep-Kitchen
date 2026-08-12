@@ -1,0 +1,45 @@
+# Apache config for the static Next.js export on GoDaddy shared hosting.
+# Copied into `out/` by `next build` and served from public_html.
+
+DirectoryIndex index.html
+
+ErrorDocument 404 /404.html
+
+# Serve the correct MIME types for assets GoDaddy's default config misses.
+<IfModule mod_mime.c>
+  AddType image/webp                .webp
+  AddType video/webm                .webm
+  AddType video/mp4                 .mp4
+  AddType application/pdf           .pdf
+  AddType image/svg+xml             .svg
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain application/javascript application/json image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # Hashed build assets are immutable.
+  ExpiresByType text/css                "access plus 1 year"
+  ExpiresByType application/javascript  "access plus 1 year"
+  ExpiresByType image/webp              "access plus 6 months"
+  ExpiresByType image/jpeg              "access plus 6 months"
+  ExpiresByType image/png               "access plus 6 months"
+  ExpiresByType video/mp4               "access plus 6 months"
+  ExpiresByType video/webm              "access plus 6 months"
+  ExpiresByType application/pdf         "access plus 1 month"
+  # HTML must revalidate so redeploys are picked up.
+  ExpiresByType text/html               "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|webp|jpg|jpeg|png|svg|mp4|webm|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

@@ -1,8 +1,8 @@
 import Reveal from "./Reveal";
 import Image from "next/image";
-import eventBrunch from "../assets/events/--2.png";
-import eventDj from "../assets/events/2.png";
-import eventHappyHour from "../assets/events/3.png";
+import eventBrunch from "../assets/events/--2.webp";
+import eventDj from "../assets/events/2.webp";
+import eventHappyHour from "../assets/events/3.webp";
 
 const events = [
   { title: "Live Music", image: eventDj },
@@ -15,7 +15,7 @@ export default function EventsSection({ showOrderButton = true }: { showOrderBut
     <section id="events" className="bg-[#c6a15b] px-6 py-8 lg:px-10">
       <div className="mx-auto max-w-[1400px]">
         <Reveal className="mb-10 text-center">
-          <p className="eyebrow mb-2 text-[#0c0b09]/70">What's On</p>
+          <p className="eyebrow mb-2 text-[#0c0b09]/70">What&apos;s On</p>
           <h2 className="font-display text-4xl text-[#0c0b09] sm:text-5xl">Events</h2>
         </Reveal>
         <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-3">

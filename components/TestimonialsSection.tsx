@@ -48,7 +48,7 @@ export default function TestimonialsSection() {
                       </div>
                     </div>
                   </div>
-                  <p className="text-sm leading-relaxed text-[#d0d0d0]">"{review.text}"</p>
+                  <p className="text-sm leading-relaxed text-[#d0d0d0]">&ldquo;{review.text}&rdquo;</p>
                 </div>
               </div>
             ))}

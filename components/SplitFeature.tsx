@@ -2,7 +2,7 @@ import Link from "next/link";
 import { DoorOpen, Martini } from "lucide-react";
 import PhotoPlaceholder from "./PhotoPlaceholder";
 import Reveal from "./Reveal";
-import semiPrivateImg from "../assets/semi_private.jpg";
+import semiPrivateImg from "../assets/semi_private.webp";
 import drinksImg from "../assets/drinks.jpg";
 
 export default function SplitFeature() {

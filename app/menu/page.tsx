@@ -1,6 +1,6 @@
 import Image from "next/image";
-import mainMenu from "../../assets/menu/MAIN MENU.jpg";
-import lunchMenu from "../../assets/menu/LUNCH MENU.png";
+import mainMenu from "../../assets/menu/MAIN MENU.webp";
+import lunchMenu from "../../assets/menu/LUNCH MENU.webp";
 import drinksMenu from "../../assets/menu/DRINKS MENU.jpg";
 
 const menus = [

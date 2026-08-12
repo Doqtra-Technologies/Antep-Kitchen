@@ -4,7 +4,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollRestoration from "@/components/ScrollRestoration";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://antepkitchen.co.uk";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Where Turkish tradition meets modern dining",
   description: "Authentic flavours, handcrafted dishes and an atmosphere designed to bring people together.",
   icons: {
