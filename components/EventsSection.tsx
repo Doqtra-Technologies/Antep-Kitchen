@@ -5,8 +5,8 @@ import eventDj from "../assets/events/2.webp";
 import eventHappyHour from "../assets/events/3.webp";
 
 const events = [
-  { title: "Live Music", image: eventDj },
-  { title: "Set Lunch", image: eventBrunch },
+  { title: "Set Lunch", image: eventDj },
+  { title: "Unforgettable Nights", image: eventBrunch },
   { title: "Private Dining", image: eventHappyHour },
 ];
 
