@@ -54,7 +54,7 @@ export default function Navbar() {
 
         <div className="hidden lg:flex items-center gap-5">
           <a
-            href="https://www.opentable.com/r/antep-kitchen-oxfordshire"
+            href="https://www.opentable.co.uk/r/antep-kitchen-reservations-oxfordshire?restref=442818&lang=en-GB&ot_source=Restaurant%20website"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-md border border-gold bg-black text-gold eyebrow px-6 py-3 hover:bg-gold hover:text-[#0c0b09] transition-colors"
@@ -99,7 +99,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="https://www.opentable.com/r/antep-kitchen-oxfordshire"
+            href="https://www.opentable.co.uk/r/antep-kitchen-reservations-oxfordshire?restref=442818&lang=en-GB&ot_source=Restaurant%20website"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}
